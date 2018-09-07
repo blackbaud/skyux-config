@@ -8,7 +8,8 @@
     "node": ">=8.11.1"
   },
   "scripts": {
-    "build": "skyux build-public-library",
+    "build": "skyux build-public-library && node ./scripts/prepare-package.js",
+    "build:ci": "npm run build",
     "skyux": "skyux",
     "start": "skyux serve --hmr",
     "test": "skyux test --coverage library --logFormat none",
@@ -44,6 +45,7 @@
     "@blackbaud/skyux": "2.19.0",
     "@blackbaud/skyux-builder": "1.19.3",
     "core-js": "2.4.1",
+    "fs-extra": "7.0.0",
     "normalize-scss": "5.0.3",
     "rxjs": "5.4.3",
     "ts-node": "3.0.4",
