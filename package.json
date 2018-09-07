@@ -8,7 +8,8 @@
     "node": ">=8.11.1"
   },
   "scripts": {
-    "build": "skyux build-public-library",
+    "build": "skyux build-public-library && node ./scripts/prepare-package.js",
+    "build:ci": "npm run build",
     "skyux": "skyux",
     "start": "skyux serve --hmr",
     "test": "skyux test --coverage library --logFormat none",
