@@ -8,11 +8,12 @@
     "node": ">=8.11.1"
   },
   "scripts": {
+    "build": "skyux build-public-library && node ./scripts/prepare-package.js",
+    "build:ci": "npm run build",
     "skyux": "skyux",
-    "test": "skyux test --coverage library",
-    "test:ci": "skyux test --platform travis --coverage library && npm run build",
-    "build": "skyux build-public-library",
-    "start": "skyux serve"
+    "start": "skyux serve --hmr",
+    "test": "skyux test --coverage library --logFormat none",
+    "test:ci": "skyux test --coverage library --logFormat none --platform travis && npm run build"
   },
   "keywords": [],
   "author": "Blackbaud",
@@ -29,6 +30,7 @@
     "@angular/core": "^4.3.6",
     "@angular/http": "^4.3.6"
   },
+  "dependencies": {},
   "devDependencies": {
     "@angular/animations": "4.3.6",
     "@angular/common": "4.3.6",
@@ -41,9 +43,10 @@
     "@angular/platform-browser-dynamic": "4.3.6",
     "@angular/router": "4.3.6",
     "@blackbaud/auth-client": "2.7.0",
-    "@blackbaud/skyux": "2.19.0",
-    "@blackbaud/skyux-builder": "1.19.3",
+    "@blackbaud/skyux": "2.24.0",
+    "@blackbaud/skyux-builder": "1.20.2",
     "core-js": "2.4.1",
+    "fs-extra": "7.0.0",
     "normalize-scss": "5.0.3",
     "rxjs": "5.4.3",
     "ts-node": "3.0.4",
