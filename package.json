@@ -30,6 +30,7 @@
     "@angular/core": "^4.3.6",
     "@angular/http": "^4.3.6"
   },
+  "dependencies": {},
   "devDependencies": {
     "@angular/animations": "4.3.6",
     "@angular/common": "4.3.6",
