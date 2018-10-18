@@ -21,6 +21,7 @@ export class SkyuxPactConfig {
 
 export interface SkyuxConfigE2ETestSettings {
   browserSet?: 'speedy';
+  webdriverManagerUpdate?: true;
 }
 
 export interface SkyuxConfigUnitTestSettings {
