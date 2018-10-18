@@ -269,6 +269,11 @@
               "enum": [
                 "speedy"
               ]
+            },
+            "webdriverManagerUpdate": {
+              "description": "Whether the webdriver-manager update command should run.",
+              "type": "boolean",
+              "default": true
             }
           }
         },
