@@ -1,4 +1,5 @@
 {
+  "$schema": "./skyuxconfig-schema.json",
   "name": "skyux-config",
   "mode": "easy",
   "compileMode": "aot",
