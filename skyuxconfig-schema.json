@@ -225,6 +225,10 @@
         }
       }
     },
+    "pipelineSettings": {
+      "description": "Configuration options specific to pipeline configuration.",
+      "type": "object"
+    },
     "plugins": {
       "description": "Specifies plugins to expand on existing SKY UX Builder functionality and create new functionality.",
       "type": "array"

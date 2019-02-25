@@ -5,6 +5,7 @@ import { SkyuxConfigParams } from './config-params';
 export interface RuntimeConfigApp {
   base: string;
   inject: boolean;
+  name?: string;
   template: string;
 }
 
@@ -83,6 +84,7 @@ export interface SkyuxConfig {
   name?: string;
   pacts?: any[];
   params?: SkyuxConfigParams; // List of allowed params
+  pipelineSettings?: any;
   plugins?: string[];
   redirects?: any;
   routes?: {
