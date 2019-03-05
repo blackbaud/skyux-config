@@ -1,3 +1,7 @@
+# 3.5.0 (2019-03-05)
+
+- Added new `moduleAliases` property to schema. [#16](https://github.com/blackbaud/skyux-config/pull/16)
+
 # 3.4.0 (2019-01-31)
 
 - Added an optional `name` property to `RuntimeConfigApp`. [#15](https://github.com/blackbaud/skyux-config/pull/15)
