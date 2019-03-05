@@ -175,6 +175,10 @@
       ],
       "default": "easy"
     },
+    "moduleAliases": {
+      "description": "Specifies module aliases to allow for custom module resolution.",
+      "type": "object"
+    },
     "name": {
       "description": "Specifies the name of the project when running in SKY UX Host. By default, SKY UX Builder uses the name property in the package.json file, minus the 'blackbaud-skyux-spa-' prefix.",
       "type": "string"
