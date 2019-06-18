@@ -104,6 +104,13 @@
               }
             }
           }
+        },
+        "styles": {
+          "description": "An array of CSS or SCSS files to be bundled with the SPA.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -168,6 +175,10 @@
       ],
       "default": "easy"
     },
+    "moduleAliases": {
+      "description": "Specifies module aliases to allow for custom module resolution.",
+      "type": "object"
+    },
     "name": {
       "description": "Specifies the name of the project when running in SKY UX Host. By default, SKY UX Builder uses the name property in the package.json file, minus the 'blackbaud-skyux-spa-' prefix.",
       "type": "string"
@@ -217,6 +228,10 @@
           }
         }
       }
+    },
+    "pipelineSettings": {
+      "description": "Configuration options specific to pipeline configuration.",
+      "type": "object"
     },
     "plugins": {
       "description": "Specifies plugins to expand on existing SKY UX Builder functionality and create new functionality.",

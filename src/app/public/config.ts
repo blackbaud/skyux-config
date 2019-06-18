@@ -5,6 +5,7 @@ import { SkyuxConfigParams } from './config-params';
 export interface RuntimeConfigApp {
   base: string;
   inject: boolean;
+  name?: string;
   template: string;
 }
 
@@ -58,6 +59,7 @@ export interface SkyuxConfigA11y {
 export interface SkyuxConfigApp {
   externals?: Object;
   port?: string;
+  styles?: string[];
   title?: string;
 }
 
@@ -79,9 +81,11 @@ export interface SkyuxConfig {
   host?: SkyuxConfigHost;
   importPath?: string;
   mode?: string;
+  moduleAliases?: {[key: string]: string};
   name?: string;
   pacts?: any[];
   params?: SkyuxConfigParams; // List of allowed params
+  pipelineSettings?: any;
   plugins?: string[];
   redirects?: any;
   routes?: {

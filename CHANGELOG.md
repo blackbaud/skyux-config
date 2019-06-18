@@ -1,3 +1,23 @@
+# 3.5.0 (2019-03-05)
+
+- Added `moduleAliases` property to schema. [#16](https://github.com/blackbaud/skyux-config/pull/16)
+
+# 3.4.0 (2019-01-31)
+
+- Added optional `name` property to `RuntimeConfigApp`. [#15](https://github.com/blackbaud/skyux-config/pull/15)
+
+# 3.3.0 (2019-01-25)
+
+- Added `pipelineSettings` property to schema. [#13](https://github.com/blackbaud/skyux-config/pull/13)
+
+# 3.2.0 (2018-11-15)
+
+- Updated peer dependencies to support Angular versions greater than `4.3.6`. [#11](https://github.com/blackbaud/skyux-config/pull/11)
+
+# 3.1.0 (2018-10-17)
+
+- Added `styles` property to schema. [#8](https://github.com/blackbaud/skyux-config/pull/8)
+
 # 3.0.0 (2018-09-20)
 
 - Initial major release.
