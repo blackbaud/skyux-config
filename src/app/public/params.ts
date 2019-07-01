@@ -9,8 +9,6 @@ import {
 /**
  * Given a "url" (could be just querystring, or fully qualified),
  * Returns the extracted URLSearchParams.
- * @param {string} url
- * @return {URLSearchParams} urlSearchParams
  */
 function getUrlSearchParams(url: string): URLSearchParams {
 
@@ -91,8 +89,6 @@ export class SkyAppRuntimeConfigParams {
 
   /**
    * Does the key exist
-   * @param {string} key
-   * @returns {boolean}
    */
   public has(key: string): boolean {
     return this.params && this.params.hasOwnProperty(key);
@@ -100,8 +96,6 @@ export class SkyAppRuntimeConfigParams {
 
   /**
    * Are all the required params defined?.
-   * @name hasAllRequiredParams
-   * @returns {array}
    */
   public hasAllRequiredParams(): boolean {
     if (this.requiredParams.length === 0) {
@@ -115,7 +109,6 @@ export class SkyAppRuntimeConfigParams {
 
   /**
    * Returns a flag indicating whether a parameter is required.
-   * @param key
    */
   public isRequired(key: string): boolean {
     return this.requiredParams.indexOf(key) >= 0;
@@ -123,9 +116,9 @@ export class SkyAppRuntimeConfigParams {
 
   /**
    * Returns the value of the requested param.
-   * @name get
-   * @param {string} key The parameter's key.
-   * @returns {string}
+   * @param key The parameter's key.
+   * @param urlDecode A flag indicating whether the value should be URL-decoded.
+   * Specify true when you anticipate the value of the parameter coming from the page's URL.
    */
   public get(key: string): string {
     if (this.has(key)) {
@@ -134,10 +127,8 @@ export class SkyAppRuntimeConfigParams {
   }
 
   /**
-   * Returns the params object
-   * @name getAll
-   * @param {boolean} excludeDefaults Exclude params that have default values
-   * @returns {Object}
+   * Returns the params object.
+   * @param excludeDefaults Exclude params that have default values
    */
   public getAll(excludeDefaults?: boolean): Object {
     const filteredParams: { [key: string]: string} = {};
@@ -153,8 +144,6 @@ export class SkyAppRuntimeConfigParams {
 
   /**
    * Returns all keys for current params.
-   * @name getAllKeys
-   * @returns {array}
    */
   public getAllKeys(): string[] {
     return Object.keys(this.params);
@@ -162,9 +151,6 @@ export class SkyAppRuntimeConfigParams {
 
   /**
    * Adds the current params to the supplied url.
-   * @name getUrl
-   * @param {string} url
-   * @returns {string} url
    */
   public getUrl(url: string): string {
     const urlSearchParams = getUrlSearchParams(url);
