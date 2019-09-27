@@ -51,6 +51,10 @@
       "description": "Specifies configuration options for the local app when running skyux serve",
       "type": "object",
       "properties": {
+        "base": {
+          "description": "Allows the base href to be set during skyux build.",
+          "type": "string"
+        },
         "title": {
           "description": "Controls the page title at the template level while waiting for the application to load.",
           "type": "string"
