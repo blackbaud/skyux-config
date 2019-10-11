@@ -65,6 +65,7 @@ export interface SkyuxConfigApp {
 }
 
 export interface SkyuxConfigHost {
+  frameOptions?: string;
   url?: string;
 }
 

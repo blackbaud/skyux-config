@@ -159,6 +159,10 @@
       "description": "Specifies configuration options for communication with SKY UX Host.",
       "type": "object",
       "properties": {
+        "frameOptions": {
+          "description": "Specifies a value for `X-Frame-Options` that will be applied to the SKY UX Host HTTP headers. This value allows SPAs to set their own security preferences for embedded iframes. Possible values include \"sameorigin\", \"deny\", \"blackbaud\", or \"allow-from https://www.example.com\". Setting this value to \"blackbaud\" will only allow iframes to set their `src` attribute to whitelisted Blackbaud domains.",
+          "type": "string"
+        },
         "url": {
           "description": "Specifies a base URL to pass information from skyux serve to the SKY UX Host.",
           "type": "string",
