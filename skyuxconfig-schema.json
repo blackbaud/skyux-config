@@ -160,7 +160,7 @@
       "type": "object",
       "properties": {
         "frameOptions": {
-          "description": "Specifies an `X-Frame-Options` value for SKY UX Host HTTP headers to set security preferences for a SPA's embedded iframes. This property is for internal Blackbaud use only.",
+          "description": "Specifies an `X-Frame-Options` value for SKY UX Host HTTP headers to set security preferences for the SPA's embedded iframes. This property is for internal Blackbaud use only.",
           "type": "string"
         },
         "url": {
