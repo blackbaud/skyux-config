@@ -1,6 +1,6 @@
 import {
-  URLSearchParams
-} from '@angular/http';
+  HttpParams
+} from '@angular/common/http';
 
 import {
   SkyuxConfigParams
@@ -8,9 +8,9 @@ import {
 
 /**
  * Given a "url" (could be just querystring, or fully qualified),
- * Returns the extracted URLSearchParams.
+ * Returns the extracted HttpParams.
  */
-function getUrlSearchParams(url: string): URLSearchParams {
+function getUrlSearchParams(url: string): HttpParams {
 
   let qs = '';
 
@@ -19,7 +19,9 @@ function getUrlSearchParams(url: string): URLSearchParams {
     qs = qs.split('#')[0];
   }
 
-  return new URLSearchParams(qs);
+  return new HttpParams({
+    fromString: qs
+  });
 }
 
 export class SkyAppRuntimeConfigParams {
@@ -81,18 +83,18 @@ export class SkyAppRuntimeConfigParams {
       }
     }
 
-    const urlSearchParams = getUrlSearchParams(url);
+    const httpParams = getUrlSearchParams(url);
 
     // Get uppercase keys.
     const allowedKeysUC = allowed.map(key => key.toUpperCase());
-    const urlSearchParamKeys = Array.from(urlSearchParams.paramsMap.keys());
+    const urlSearchParamKeys = Array.from(httpParams.keys());
 
     // Filter to allowed params and override default values.
     urlSearchParamKeys.forEach(givenKey => {
       const givenKeyUC = givenKey.toUpperCase();
       allowedKeysUC.forEach((allowedKeyUC, index) => {
         if (givenKeyUC === allowedKeyUC) {
-          this.params[allowed[index]] = urlSearchParams.get(givenKey);
+          this.params[allowed[index]] = httpParams.get(givenKey);
           this.encodedParams.push(givenKey);
         }
       });
@@ -132,14 +134,11 @@ export class SkyAppRuntimeConfigParams {
    * @param urlDecode A flag indicating whether the value should be URL-decoded.
    * Specify true when you anticipate the value of the parameter coming from the page's URL.
    */
-  public get(key: string, urlDecode?: boolean): string {
+  public get(key: string): string {
     if (this.has(key)) {
       let val = this.params[key];
 
-      // This should be changed to always decode encoded params in skyux-builder 2.0.
-      if (urlDecode && this.encodedParams.indexOf(key) >= 0) {
-        val = decodeURIComponent(val);
-      }
+      val = decodeURIComponent(val);
 
       return val;
     }
@@ -172,16 +171,16 @@ export class SkyAppRuntimeConfigParams {
    * Adds the current params to the supplied url.
    */
   public getUrl(url: string): string {
-    const urlSearchParams = getUrlSearchParams(url);
+    const httpParams = getUrlSearchParams(url);
     const delimiter = url.indexOf('?') === -1 ? '?' : '&';
     const joined: string[] = [];
 
     this.getAllKeys().forEach(key => {
       if (
         this.excludeFromRequestsParams.indexOf(key) === -1 &&
-        !urlSearchParams.has(key)
+        !httpParams.has(key)
       ) {
-        joined.push(`${key}=${encodeURIComponent(this.get(key, true))}`);
+        joined.push(`${key}=${encodeURIComponent(this.get(key))}`);
       }
     });
 

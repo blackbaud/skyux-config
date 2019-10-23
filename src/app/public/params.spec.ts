@@ -181,14 +181,8 @@ describe('SkyAppRuntimeConfigParams', () => {
       }
     );
 
-    // Preserves previous behavior of not encoding values from the query string.
-    expect(params.get('a')).toBe('%2F');
-    expect(params.get('b')).toBe('%2F');
-
-    // The second parameter tells the get() method to decode the parameter if it's from the
-    // query string.
-    expect(params.get('a', true)).toBe('/');
-    expect(params.get('b', true)).toBe('%2F');
+    expect(params.get('a')).toBe('/');
+    expect(params.get('b')).toBe('/');
   });
 
   it('should allow queryparam values to be required', () => {
@@ -202,6 +196,7 @@ describe('SkyAppRuntimeConfigParams', () => {
       }
     );
 
+    expect(params.isRequired('a1')).toEqual(true);
     expect(params.hasAllRequiredParams()).toBe(true);
   });
 
