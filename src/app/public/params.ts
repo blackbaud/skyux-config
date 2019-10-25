@@ -134,11 +134,14 @@ export class SkyAppRuntimeConfigParams {
    * @param urlDecode A flag indicating whether the value should be URL-decoded.
    * Specify true when you anticipate the value of the parameter coming from the page's URL.
    */
-  public get(key: string): string {
+  public get(key: string, urlDecode: boolean = false): string {
     if (this.has(key)) {
       let val = this.params[key];
 
-      val = decodeURIComponent(val);
+      // This should be changed to always decode encoded params in skyux-builder 2.0.
+      if (!urlDecode && this.encodedParams.indexOf(key) >= 0) {
+        val = encodeURIComponent(val);
+      }
 
       return val;
     }
@@ -180,7 +183,7 @@ export class SkyAppRuntimeConfigParams {
         this.excludeFromRequestsParams.indexOf(key) === -1 &&
         !httpParams.has(key)
       ) {
-        joined.push(`${key}=${encodeURIComponent(this.get(key))}`);
+        joined.push(`${key}=${encodeURIComponent(this.get(key, true))}`);
       }
     });
 
