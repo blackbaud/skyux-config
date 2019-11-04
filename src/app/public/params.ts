@@ -94,7 +94,12 @@ export class SkyAppRuntimeConfigParams {
       const givenKeyUC = givenKey.toUpperCase();
       allowedKeysUC.forEach((allowedKeyUC, index) => {
         if (givenKeyUC === allowedKeyUC) {
-          this.params[allowed[index]] = httpParams.get(givenKey);
+          // To avoid breaking changes, we must encode the parameter value since
+          // this was the default behavior of the previously used UrlSearchParams utility.
+          // TODO: Remove encoding in favor of HttpParams' default behavior.
+          const value = encodeURIComponent(httpParams.get(givenKey));
+
+          this.params[allowed[index]] = value;
           this.encodedParams.push(givenKey);
         }
       });
@@ -134,13 +139,13 @@ export class SkyAppRuntimeConfigParams {
    * @param urlDecode A flag indicating whether the value should be URL-decoded.
    * Specify true when you anticipate the value of the parameter coming from the page's URL.
    */
-  public get(key: string, urlDecode: boolean = false): string {
+  public get(key: string, urlDecode?: boolean): string {
     if (this.has(key)) {
       let val = this.params[key];
 
       // This should be changed to always decode encoded params in skyux-builder 2.0.
-      if (!urlDecode && this.encodedParams.indexOf(key) >= 0) {
-        val = encodeURIComponent(val);
+      if (urlDecode && this.encodedParams.indexOf(key) >= 0) {
+        val = decodeURIComponent(val);
       }
 
       return val;
