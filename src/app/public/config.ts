@@ -64,8 +64,39 @@ export interface SkyuxConfigApp {
   title?: string;
 }
 
+export interface SkyuxConfigHostFrameOptions {
+  none?: boolean;
+  self?: boolean;
+  blackbaud?: boolean;
+  urls?: string[];
+}
+
+export interface SkyuxConfigHostBBCheckout {
+  version: '2';
+}
+
+export interface SkyuxConfigHostFrameOptionsNone {
+  none: true;
+}
+
+export interface SkyuxConfigHostFrameOptionsSelf {
+  self: true;
+}
+
+export interface SkyuxConfigHostFrameOptionsBlackbaud {
+  blackbaud: true;
+}
+
+export interface SkyuxConfigHostFrameOptionsUrls {
+  urls: string[];
+}
+
 export interface SkyuxConfigHost {
-  frameOptions?: Object;
+  bbCheckout?: SkyuxConfigHostBBCheckout;
+  frameOptions?: SkyuxConfigHostFrameOptionsNone |
+    SkyuxConfigHostFrameOptionsSelf |
+    SkyuxConfigHostFrameOptionsBlackbaud |
+    SkyuxConfigHostFrameOptionsUrls;
   url?: string;
 }
 
