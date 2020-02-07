@@ -198,7 +198,10 @@
               "none": {
                 "const": true
               }
-            }
+            },
+            "required": [
+              "none"
+            ]
           },
           "then": {
             "not": {
