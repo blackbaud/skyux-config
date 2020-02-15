@@ -267,6 +267,19 @@
       "description": "The individual SKY UX modules that should be imported into the application.  Use this property for performance optimization when your application only uses a small subset of SKY UX components.",
       "type": "array"
     },
+    "librarySettings": {
+      "description": "Container for controlling library settings",
+      "type": "object",
+      "properties": {
+        "whitelistedNonPeerDependencies": {
+          "description": "Specifies package dependencies that are allowed to be added to a library's package.json `dependencies` object when a library is published.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "testSettings": {
       "description": "Container for controlling test settings.",
       "type": "object",
