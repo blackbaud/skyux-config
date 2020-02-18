@@ -1,6 +1,6 @@
 # 3.8.0 (2020-02-18)
 
-- Added `frameOptions` property. [#34](https://github.com/blackbaud/skyux-config/pull/34)
+- Added the `bbCheckout` and `frameOptions` properties. [#34](https://github.com/blackbaud/skyux-config/pull/34)
 
 # 3.7.0 (2019-11-19)
 
