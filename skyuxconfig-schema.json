@@ -160,7 +160,7 @@
       "type": "object",
       "properties": {
         "bbCheckout": {
-          "description": "Specific bbCheckout options for the Host service.",
+          "description": "Specifies bbCheckout options for the Host service.",
           "type": "object",
           "properties": {
             "version": {
