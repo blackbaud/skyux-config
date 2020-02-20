@@ -1,6 +1,6 @@
 # 3.8.1 (2020-02-20)
 
-- Removed boolean as a valid type in the schema the `help` property.. [#41](https://github.com/blackbaud/skyux-config/pull/41)
+- Fixed the `help` property in the schema to only accept values of type `object`. [#41](https://github.com/blackbaud/skyux-config/pull/41)
 - Fixed typo in the schema for the `bbCheckout` property. [#40](https://github.com/blackbaud/skyux-config/pull/40)
 
 # 3.8.0 (2020-02-18)
