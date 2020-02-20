@@ -102,6 +102,7 @@ export interface SkyuxConfig {
   command?: string;
   compileMode?: string;
   cssPath?: string;
+  enableIvy?: boolean;
   help?: any;
   host?: SkyuxConfigHost;
   importPath?: string;
