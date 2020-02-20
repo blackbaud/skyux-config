@@ -151,7 +151,6 @@
     "help": {
       "description": " Indicates whether to automatically include the help widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only.",
       "type": [
-        "boolean",
         "object"
       ]
     },
