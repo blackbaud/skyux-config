@@ -1,3 +1,26 @@
+# 4.0.0-rc.0 (2020-02-15)
+
+### New features
+
+- Added the optional `librarySettings` property to the schema. [#37](https://github.com/blackbaud/skyux-config/pull/37)
+- Updated the pipeline to transpile to the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview). [#37](https://github.com/blackbaud/skyux-config/pull/37)
+
+### Breaking changes
+
+- Dropped support for `rxjs@5`. Consumers may install `rxjs-compat@^6` to support older versions of `rxjs`. [#37](https://github.com/blackbaud/skyux-config/pull/37)
+
+# 3.7.0 (2019-11-19)
+
+- Replaced all imports from `@angular/http` with `@angular/common/http`. [#30](https://github.com/blackbaud/skyux-config/pull/30)
+
+# 3.6.0 (2019-09-27)
+
+- Added optional `base` property to `SkyuxConfigApp`. [#26](https://github.com/blackbaud/skyux-config/pull/26)
+
+# 3.5.1 (2019-07-01)
+
+- Added support for `@skyux-sdk/builder@3.7.0` which addressed some security vulnerabilities. [#20](https://github.com/blackbaud/skyux-config/pull/20)
+
 # 3.5.0 (2019-03-05)
 
 - Added `moduleAliases` property to schema. [#16](https://github.com/blackbaud/skyux-config/pull/16)
