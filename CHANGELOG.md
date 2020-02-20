@@ -1,3 +1,14 @@
+# 4.0.0-rc.1 (2020-02-20)
+
+### New features
+
+- Added the optional `enableIvy` property to the schema to enable or disable Angular's Ivy Compiler. [#43](https://github.com/blackbaud/skyux-config/pull/43)
+
+### Breaking changes
+
+- Changed the `params` property on the schema to only accept type `object`. The value provided is converted into the `SkyConfigParams` TypeScript type during build time. [#18](https://github.com/blackbaud/skyux-config/pull/18)
+- Removed the `omnibar.experimental` property on the schema. To enable the Omnibar after this release, simply provide an empty object `"omnibar": {}`. [#18](https://github.com/blackbaud/skyux-config/pull/18)
+
 # 3.8.1 (2020-02-20)
 
 - Fixed the `help` property in the schema to only accept values of type `object`. [#41](https://github.com/blackbaud/skyux-config/pull/41)
