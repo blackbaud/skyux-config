@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "JSON schema for SKY UX CLI skyuxconfig.json",
   "definitions": {
     "externalFileCSS": {
@@ -151,14 +151,94 @@
     "help": {
       "description": " Indicates whether to automatically include the help widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only.",
       "type": [
-        "boolean",
         "object"
       ]
     },
     "host": {
-      "description": "Specifies configuration options for communication with SKY UX Host.",
+      "description": "Blackbaud Only - Specifies configuration options for communication with SKY UX Host.",
       "type": "object",
       "properties": {
+        "bbCheckout": {
+          "description": "Specifies bbCheckout options for the Host service.",
+          "type": "object",
+          "properties": {
+            "version": {
+              "description": "Specifies the whitelisted version of bbCheckout to include.",
+              "type": "string",
+              "enum": [
+                "2"
+              ]
+            }
+          }
+        },
+        "frameOptions": {
+          "description": "Specifies frame options for the Host service.",
+          "type": "object",
+          "properties": {
+            "none": {
+              "description": "Sets the frame options to none. Superseds all other `frameOptions` properties.",
+              "type": "boolean"
+            },
+            "self": {
+              "description": "Sets the frame options to self.",
+              "type": "boolean"
+            },
+            "blackbaud": {
+              "description": "Sets the frame options to common Blackbaud URLs",
+              "type": "boolean"
+            },
+            "urls": {
+              "description": "Sets the frame options to this list.  Can be used in conjunction with the `self` and `blackbaud` properties.",
+              "type": "array"
+            }
+          },
+          "if": {
+            "properties": {
+              "none": {
+                "const": true
+              }
+            },
+            "required": [
+              "none"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "blackbaud": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "blackbaud"
+                  ]
+                },
+                {
+                  "properties": {
+                    "self": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "self"
+                  ]
+                },
+                {
+                  "properties": {
+                    "urls": {
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "urls"
+                  ]
+                }
+              ]
+            }
+          }
+        },
         "url": {
           "description": "Specifies a base URL to pass information from skyux serve to the SKY UX Host.",
           "type": "string",
