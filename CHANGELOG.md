@@ -1,3 +1,7 @@
+# 4.0.0-rc.2 (2020-04-01)
+
+- Upgraded development dependencies. [#44](https://github.com/blackbaud/skyux-config/pull/44)
+
 # 4.0.0-rc.1 (2020-02-20)
 
 ### New features
