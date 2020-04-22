@@ -1,6 +1,6 @@
 {
   "name": "@skyux/config",
-  "version": "3.8.1",
+  "version": "3.9.0",
   "description": "SKY UX Config",
   "main": "bundles/bundle.umd.js",
   "module": "index.ts",
