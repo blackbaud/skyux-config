@@ -1,3 +1,7 @@
+# 3.9.0 (2020-04-22)
+
+- Added the `theming` property to `SkyuxConfigApp`. [#46](https://github.com/blackbaud/skyux-config/pull/46)
+
 # 4.0.0-rc.2 (2020-04-01)
 
 - Upgraded development dependencies. [#44](https://github.com/blackbaud/skyux-config/pull/44)
