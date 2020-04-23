@@ -1,3 +1,7 @@
+# 4.0.0-rc.3 (2020-04-23)
+
+- Added bug fixes and features from the `master` branch. [#49](https://github.com/blackbaud/skyux-config/pull/49)
+
 # 3.9.0 (2020-04-22)
 
 - Added the `theming` property to `SkyuxConfigApp`. [#46](https://github.com/blackbaud/skyux-config/pull/46)
