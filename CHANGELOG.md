@@ -8,7 +8,7 @@
 
 ### Breaking changes
 
-- Dropped support for `rxjs@5`. Consumers may install `rxjs-compat@^6` to support older versions of `rxjs`. [#37](https://github.com/blackbaud/skyux-config/pull/37)
+- Dropped support for `rxjs@5`. Consumers can install `rxjs-compat@^6` to support older versions of `rxjs`. [#37](https://github.com/blackbaud/skyux-config/pull/37)
 - Changed the `params` property on the schema to only accept type `object`. The value provided is converted into the `SkyConfigParams` TypeScript type during build time. [#18](https://github.com/blackbaud/skyux-config/pull/18)
 - Removed the `omnibar.experimental` property on the schema. To enable the Omnibar after this release, simply provide an empty object `"omnibar": {}`. [#18](https://github.com/blackbaud/skyux-config/pull/18)
 
@@ -53,7 +53,7 @@
 
 ### Breaking changes
 
-- Dropped support for `rxjs@5`. Consumers may install `rxjs-compat@^6` to support older versions of `rxjs`. [#37](https://github.com/blackbaud/skyux-config/pull/37)
+- Dropped support for `rxjs@5`. Consumers can install `rxjs-compat@^6` to support older versions of `rxjs`. [#37](https://github.com/blackbaud/skyux-config/pull/37)
 
 # 3.7.0 (2019-11-19)
 
