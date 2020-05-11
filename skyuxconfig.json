@@ -9,9 +9,12 @@
     }
   },
   "app": {
-    "styles": [
-      "@skyux/theme/css/sky.css"
-    ]
+    "styles": []
   },
-  "plugins": []
+  "plugins": [],
+  "host": {
+    "frameOptions": {
+      "none": true
+    }
+  }
 }
