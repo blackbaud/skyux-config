@@ -1,6 +1,6 @@
 # 4.0.1 (2020-07-08)
 
-- Moved `theming` to the `app` section in `skyuxconfig-schema.json` to match the corresponding TypeScript declarations. [#30](https://github.com/blackbaud/skyux-config/pull/30)
+- Moved `theming` to the `app` section in `skyuxconfig-schema.json` to match the corresponding TypeScript declarations. [#58](https://github.com/blackbaud/skyux-config/pull/58)
 
 # 4.0.0 (2020-05-11)
 
