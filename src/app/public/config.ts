@@ -15,6 +15,7 @@ export class SkyuxPactConfig {
       host?: string;
       port?: string;
       fullUrl?: string;
+      pactOptions?: any;
     }
   };
   public pactProxyServer?: string;
