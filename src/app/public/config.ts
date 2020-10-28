@@ -114,6 +114,7 @@ export interface SkyuxConfig {
   help?: any;
   host?: SkyuxConfigHost;
   importPath?: string;
+  incompatibleDependencies?: string[];
   librarySettings?: SkyuxConfigLibrarySettings;
   mode?: string;
   moduleAliases?: {[key: string]: string};
