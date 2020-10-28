@@ -280,7 +280,7 @@
       "type": "string"
     },
     "incompatibleDependencies": {
-      "description": "Specifies a list of package dependencies that are not ES5 compatible. Each package will be coverted to support SKY UX Builder's target environment.",
+      "description": "Specifies a list of package dependencies that are not ES5 compatible. Each package listed will be coverted to support SKY UX Builder's target environment.",
       "type": "array"
     },
     "mode": {
