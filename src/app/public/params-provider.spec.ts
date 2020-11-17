@@ -1,8 +1,4 @@
 import {
-  SkyAppParamsConfig
-} from './params-config';
-
-import {
   SkyAppRuntimeParamsProvider
 } from './params-provider';
 
@@ -10,13 +6,14 @@ import {
   WindowRef
 } from './window-ref';
 
-describe('SkyAppRuntimeConfigParamsProvider', () => {
+describe('SkyAppRuntimeParamsProvider', () => {
 
-  it('should return params', () => {
-    const config = new SkyAppParamsConfig();
-    config.params = {
-      envid: {
-        value: 'foobar'
+  it('should return runtime params', () => {
+    const config = {
+      params: {
+        envid: {
+          value: 'foobar'
+        }
       }
     };
 
