@@ -1,24 +1,26 @@
 import {
-  SkyAppRuntimeConfigParamsProvider
+  SkyAppParamsConfig
+} from './params-config';
+
+import {
+  SkyAppRuntimeParamsProvider
 } from './params-provider';
 
 import {
-  SkyAppRuntimeConfigParams
-} from './params';
+  WindowRef
+} from './window-ref';
 
 describe('SkyAppRuntimeConfigParamsProvider', () => {
 
   it('should return params', () => {
-    const params = new SkyAppRuntimeConfigParams(
-      'https://foobar.com/',
-      {
-        envid: {
-          value: 'foobar'
-        }
+    const config = new SkyAppParamsConfig();
+    config.params = {
+      envid: {
+        value: 'foobar'
       }
-    );
+    };
 
-    const provider = new SkyAppRuntimeConfigParamsProvider(params);
+    const provider = new SkyAppRuntimeParamsProvider(config, new WindowRef());
 
     expect(provider.params.get('envid')).toEqual('foobar');
   });
