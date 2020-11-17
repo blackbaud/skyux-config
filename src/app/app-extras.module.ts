@@ -7,17 +7,16 @@ import {
 } from './public/public_api';
 
 function paramsConfigFactory(): SkyAppParamsConfig {
-  const config = new SkyAppParamsConfig();
-  config.params = {
-    envid: {
-      required: true
-    },
-    svcid: {
-      value: 'tcs'
+  return new SkyAppParamsConfig({
+    params: {
+      envid: {
+        required: true
+      },
+      svcid: {
+        value: 'tcs'
+      }
     }
-  };
-
-  return config;
+  });
 }
 
 @NgModule({

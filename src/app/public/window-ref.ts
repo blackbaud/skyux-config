@@ -5,7 +5,9 @@ import {
 /**
  * @internal
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class WindowRef {
   public get nativeWindow(): any {
     return window;

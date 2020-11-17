@@ -1,10 +1,14 @@
 import {
-  Injectable
+  Injectable, Optional
 } from '@angular/core';
 
 import {
   SkyuxConfigParams
 } from './config-params';
+
+import {
+  SkyAppParamsConfigArgs
+} from './params-config-args';
 
 const DEFAULTS = {
   params: {
@@ -32,13 +36,15 @@ export class SkyAppParamsConfig {
     return this._params || DEFAULTS.params;
   }
 
-  public set params(value: SkyuxConfigParams) {
+  private _params: SkyuxConfigParams;
+
+  constructor(
+    @Optional() args?: SkyAppParamsConfigArgs
+  ) {
     this._params = {
       ...DEFAULTS.params,
-      ...value || {}
+      ...args?.params || {}
     };
   }
-
-  private _params: SkyuxConfigParams;
 
 }
