@@ -10,10 +10,6 @@ import {
   SkyAppRuntimeConfigParams
 } from './params';
 
-import {
-  WindowRef
-} from './window-ref';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,11 +22,10 @@ export class SkyAppRuntimeParamsProvider {
   private _params: SkyAppRuntimeConfigParams;
 
   constructor(
-    config: SkyAppParamsConfig,
-    windowRef: WindowRef
+    config: SkyAppParamsConfig
   ) {
     this._params = new SkyAppRuntimeConfigParams(
-      windowRef.nativeWindow.location.href,
+      window.location.href,
       config.params
     );
   }

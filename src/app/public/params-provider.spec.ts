@@ -2,10 +2,6 @@ import {
   SkyAppRuntimeParamsProvider
 } from './params-provider';
 
-import {
-  WindowRef
-} from './window-ref';
-
 describe('SkyAppRuntimeParamsProvider', () => {
 
   it('should return runtime params', () => {
@@ -17,7 +13,7 @@ describe('SkyAppRuntimeParamsProvider', () => {
       }
     };
 
-    const provider = new SkyAppRuntimeParamsProvider(config, new WindowRef());
+    const provider = new SkyAppRuntimeParamsProvider(config);
 
     expect(provider.params.get('envid')).toEqual('foobar');
   });
