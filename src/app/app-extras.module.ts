@@ -10,7 +10,7 @@ import {
   providers: [
     {
       provide: SkyAppParamsConfig,
-      useValue: {
+      useValue: new SkyAppParamsConfig({
         params: {
           envid: {
             required: true
@@ -19,7 +19,7 @@ import {
             value: 'tcs'
           }
         }
-      }
+      })
     }
   ]
 })

@@ -1,15 +1,17 @@
 import {
-  Injectable
+  Injectable, Optional
 } from '@angular/core';
 
 import {
   SkyuxConfigParams
 } from './config-params';
 
-@Injectable()
-export class SkyAppParamsConfig {
+import {
+  SkyAppParamsConfigArgs
+} from './params-config-args';
 
-  public params: SkyuxConfigParams = {
+const DEFAULTS = {
+  params: {
     envid: {
       required: false
     },
@@ -19,6 +21,27 @@ export class SkyAppParamsConfig {
     svcid: {
       required: false
     }
-  };
+  }
+};
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SkyAppParamsConfig {
+
+  public get params(): SkyuxConfigParams {
+    return this._params || DEFAULTS.params;
+  }
+
+  private _params: SkyuxConfigParams;
+
+  constructor(
+    @Optional() args?: SkyAppParamsConfigArgs
+  ) {
+    this._params = {
+      ...DEFAULTS.params,
+      ...args?.params || {}
+    };
+  }
 
 }
