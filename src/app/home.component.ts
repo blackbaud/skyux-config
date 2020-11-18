@@ -15,7 +15,7 @@ export class HomeComponent {
   constructor(
     paramsProvider: SkyAppRuntimeParamsProvider
   ) {
-    console.log(paramsProvider.params);
+    console.log('Runtime params:', paramsProvider.params);
   }
 
 }

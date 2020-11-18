@@ -6,20 +6,24 @@ import {
   SkyAppParamsConfig
 } from './public/public_api';
 
+export function paramsConfigFactory(): SkyAppParamsConfig {
+  return new SkyAppParamsConfig({
+    params: {
+      envid: {
+        required: true
+      },
+      svcid: {
+        value: 'tcs'
+      }
+    }
+  });
+}
+
 @NgModule({
   providers: [
     {
       provide: SkyAppParamsConfig,
-      useValue: new SkyAppParamsConfig({
-        params: {
-          envid: {
-            required: true
-          },
-          svcid: {
-            value: 'tcs'
-          }
-        }
-      })
+      useFactory: paramsConfigFactory
     }
   ]
 })
