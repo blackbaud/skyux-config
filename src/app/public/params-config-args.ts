@@ -10,7 +10,7 @@ import {
 export class SkyAppParamsConfigArgs {
 
   /**
-   * Specifies a list of static parameters that are allowed at runtime.
+   * Specifies a list of query parameters that are allowed at runtime.
    */
   public params?: SkyuxConfigParams;
 

@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 
 import {
-  SkyAppRuntimeParamsProvider
+  SkyAppRuntimeConfigParamsProvider
 } from './public/public_api';
 
 @Component({
@@ -13,7 +13,7 @@ import {
 export class HomeComponent {
 
   constructor(
-    paramsProvider: SkyAppRuntimeParamsProvider
+    paramsProvider: SkyAppRuntimeConfigParamsProvider
   ) {
     console.log('Runtime params:', paramsProvider.params);
   }

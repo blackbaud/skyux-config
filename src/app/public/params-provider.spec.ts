@@ -3,10 +3,10 @@ import {
 } from './params-config';
 
 import {
-  SkyAppRuntimeParamsProvider
+  SkyAppRuntimeConfigParamsProvider
 } from './params-provider';
 
-describe('SkyAppRuntimeParamsProvider', () => {
+describe('SkyAppRuntimeConfigParamsProvider', () => {
 
   it('should return runtime params', () => {
     const config = new SkyAppParamsConfig({
@@ -17,7 +17,7 @@ describe('SkyAppRuntimeParamsProvider', () => {
       }
     });
 
-    const provider = new SkyAppRuntimeParamsProvider(config);
+    const provider = new SkyAppRuntimeConfigParamsProvider(config);
 
     expect(provider.params.get('envid')).toEqual('foobar');
   });

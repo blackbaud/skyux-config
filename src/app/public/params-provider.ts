@@ -10,10 +10,13 @@ import {
   SkyAppRuntimeConfigParams
 } from './params';
 
+/**
+ * Provides methods to interact with runtime config query parameters.
+ */
 @Injectable({
   providedIn: 'root'
 })
-export class SkyAppRuntimeParamsProvider {
+export class SkyAppRuntimeConfigParamsProvider {
 
   public get params(): SkyAppRuntimeConfigParams {
     return this._params;

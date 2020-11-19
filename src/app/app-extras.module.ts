@@ -6,7 +6,10 @@ import {
   SkyAppParamsConfig
 } from './public/public_api';
 
-export function paramsConfigFactory(): SkyAppParamsConfig {
+/**
+ * Demonstrates how to provide params configuration from a consumer's application.
+ */
+function paramsConfigFactory(): SkyAppParamsConfig {
   return new SkyAppParamsConfig({
     params: {
       envid: {
