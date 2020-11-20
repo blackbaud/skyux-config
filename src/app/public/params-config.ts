@@ -1,5 +1,6 @@
 import {
-  Injectable, Optional
+  Injectable,
+  Optional
 } from '@angular/core';
 
 import {
