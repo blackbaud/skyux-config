@@ -7,7 +7,8 @@ import {
 } from './public/public_api';
 
 /**
- * Demonstrates how to provide params configuration from a consumer's application.
+ * Demonstrates how to provide params/host configuration from a consumer's application.
+ * NOTE: This is handled automatically by `@skyux-sdk/builder`.
  */
 @NgModule({
   imports: [
