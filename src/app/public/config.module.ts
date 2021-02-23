@@ -3,26 +3,17 @@ import {
   NgModule
 } from '@angular/core';
 
-import { SkyAppConfigModuleForRootArgs } from './config-module-for-root-args';
-import { SkyAppParamsConfig } from './params-config';
-import { SKY_APP_CONFIG_MODULE_FOR_ROOT_ARGS } from './config-module-for-root-args-token';
-import { SkyAppConfigHost } from './host';
+import {
+  SkyAppConfigModuleForRootArgs
+} from './config-module-for-root-args';
 
-export function paramsConfigFactory(
-  config: SkyAppConfigModuleForRootArgs
-): SkyAppParamsConfig {
-  return new SkyAppParamsConfig({
-    params: config.params
-  });
-}
+import {
+  SkyAppConfigHost
+} from './host';
 
-export function appConfigHostFactory(
-  config: SkyAppConfigModuleForRootArgs
-): SkyAppConfigHost {
-  return new SkyAppConfigHost({
-    host: config.host
-  });
-}
+import {
+  SkyAppParamsConfig
+} from './params-config';
 
 @NgModule({})
 export class SkyAppConfigModule {
@@ -35,18 +26,20 @@ export class SkyAppConfigModule {
       ngModule: SkyAppConfigModule,
       providers: [
         {
-          provide: SKY_APP_CONFIG_MODULE_FOR_ROOT_ARGS,
-          useValue: config
-        },
-        {
           provide: SkyAppParamsConfig,
-          useFactory: paramsConfigFactory,
-          deps: [SKY_APP_CONFIG_MODULE_FOR_ROOT_ARGS]
+          useFactory() {
+            return new SkyAppParamsConfig({
+              params: config.params
+            });
+          }
         },
         {
           provide: SkyAppConfigHost,
-          useFactory: appConfigHostFactory,
-          deps: [SKY_APP_CONFIG_MODULE_FOR_ROOT_ARGS]
+          useFactory() {
+            return new SkyAppConfigHost({
+              host: config.host
+            });
+          }
         }
       ]
     };

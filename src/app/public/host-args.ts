@@ -1,8 +1,14 @@
-import { Injectable } from '@angular/core';
+import {
+  Injectable
+} from '@angular/core';
 
-import { SkyuxConfigHost } from './config';
+import {
+  SkyuxConfigHost
+} from './config';
 
 @Injectable()
 export class SkyAppConfigHostArgs {
+
   public host?: SkyuxConfigHost;
+
 }

@@ -11,7 +11,19 @@ import {
  */
 @NgModule({
   imports: [
-    SkyAppConfigModule.forRoot()
+    SkyAppConfigModule.forRoot({
+      params: {
+        envid: {
+          required: true
+        },
+        svcid: {
+          value: 'tcs'
+        }
+      },
+      host: {
+        url: 'https://localhost:5243/'
+      }
+    })
   ]
 })
 export class AppExtrasModule { }
