@@ -11,6 +11,13 @@ import {
   SkyAppConfigHostArgs
 } from './host-args';
 
+const DEFAULTS: SkyuxConfigHost = {
+  frameOptions: {
+    none: true
+  },
+  url: 'https://host.nxt.blackbaud.com/'
+};
+
 @Injectable()
 export class SkyAppConfigHost {
 
@@ -23,13 +30,9 @@ export class SkyAppConfigHost {
   constructor(
     @Optional() args?: SkyAppConfigHostArgs
   ) {
-    const defaults: SkyuxConfigHost = {
-      frameOptions: {
-        none: true
-      },
-      url: 'https://host.nxt.blackbaud.com/'
+    this._host = {
+      ...DEFAULTS,
+      ...args?.host || {}
     };
-
-    this._host = {...defaults, ...args?.host || {}};
   }
 }
