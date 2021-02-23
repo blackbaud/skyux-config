@@ -1,5 +1,8 @@
 export * from './config-params';
+export * from './config.module';
 export * from './config';
+
+export * from './host';
 
 export * from './params-config-args';
 export * from './params-config';
