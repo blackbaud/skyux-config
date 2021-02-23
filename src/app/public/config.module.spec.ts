@@ -9,7 +9,10 @@ import {
 import {
   SkyAppConfigHost
 } from './host';
-import { SkyAppParamsConfig } from './params-config';
+
+import {
+  SkyAppParamsConfig
+} from './params-config';
 
 describe('SkyAppConfigModule', () => {
 
