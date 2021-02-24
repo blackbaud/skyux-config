@@ -18,6 +18,9 @@ const DEFAULTS: SkyuxConfigHost = {
   url: 'https://host.nxt.blackbaud.com/'
 };
 
+/**
+ * Provides host configuration to components and applications.
+ */
 @Injectable()
 export class SkyAppConfigHost {
 
