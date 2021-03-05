@@ -1,15 +1,10 @@
 import {
-  Injectable,
-  Optional
+  Injectable
 } from '@angular/core';
 
 import {
   SkyuxConfigHost
 } from './config';
-
-import {
-  SkyAppConfigHostArgs
-} from './host-args';
 
 const DEFAULTS: SkyuxConfigHost = {
   frameOptions: {
@@ -30,12 +25,10 @@ export class SkyAppConfigHost {
 
   private _host: SkyuxConfigHost;
 
-  constructor(
-    @Optional() args?: SkyAppConfigHostArgs
-  ) {
+  public init(config?: SkyuxConfigHost): void {
     this._host = {
       ...DEFAULTS,
-      ...args?.host || {}
+      ...config || {}
     };
   }
 }

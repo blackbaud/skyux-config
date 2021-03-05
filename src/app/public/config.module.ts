@@ -36,9 +36,9 @@ export class SkyAppConfigModule {
         {
           provide: SkyAppConfigHost,
           useFactory() {
-            return new SkyAppConfigHost({
-              host: config.host
-            });
+            const appConfigHost = new SkyAppConfigHost();
+            appConfigHost.init(config.host);
+            return appConfigHost;
           }
         }
       ]
