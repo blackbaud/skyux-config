@@ -1,4 +1,7 @@
-import { SkyAppConfigParams } from './app-config-params';
+import {
+  SkyAppConfigParams
+} from './app-config-params';
+
 import {
   SkyAppParamsConfig
 } from './params-config';
