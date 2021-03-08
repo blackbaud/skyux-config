@@ -4,11 +4,11 @@ import {
 
 import {
   SkyAppConfigModule
-} from './config.module';
+} from './app-config.module';
 
 import {
   SkyAppConfigHost
-} from './host';
+} from './app-config-host';
 
 import {
   SkyAppParamsConfig

@@ -5,11 +5,11 @@ import {
 
 import {
   SkyAppConfigModuleForRootArgs
-} from './config-module-for-root-args';
+} from './app-config-module-for-root-args';
 
 import {
   SkyAppConfigHost
-} from './host';
+} from './app-config-host';
 
 import {
   SkyAppParamsConfig
