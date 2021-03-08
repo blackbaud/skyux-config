@@ -26,7 +26,7 @@ const DEFAULTS = {
 export class SkyAppConfigParams {
 
   public get params(): SkyuxConfigParams {
-    return this._params || DEFAULTS.params;
+    return this._params;
   }
 
   private _params: SkyuxConfigParams;

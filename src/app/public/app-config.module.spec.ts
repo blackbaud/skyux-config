@@ -11,6 +11,10 @@ import {
 } from './app-config-host';
 
 import {
+  SkyAppConfigParams
+} from './app-config-params';
+
+import {
   SkyAppParamsConfig
 } from './params-config';
 
@@ -87,10 +91,14 @@ describe('SkyAppConfigModule.forRoot()', () => {
   it('should setup providers with config from forRoot args', () => {
     const hostConfig = TestBed.inject(SkyAppConfigHost);
     const paramsConfig = TestBed.inject(SkyAppParamsConfig);
+    const configParams = TestBed.inject(SkyAppConfigParams);
     expect(hostConfig.host.frameOptions).toEqual({
       blackbaud: true
     });
     expect(paramsConfig.params.foo).toEqual({
+      value: 'bar'
+    });
+    expect(configParams.params.foo).toEqual({
       value: 'bar'
     });
   });

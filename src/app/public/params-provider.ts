@@ -35,7 +35,7 @@ export class SkyAppRuntimeConfigParamsProvider {
   ) {
     this._params = new SkyAppRuntimeConfigParams(
       window.location.href,
-      paramsConfig?.params || configParams?.params
+      paramsConfig?.params || configParams?.params || {}
     );
   }
 

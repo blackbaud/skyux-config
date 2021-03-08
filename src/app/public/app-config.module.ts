@@ -41,9 +41,7 @@ export class SkyAppConfigModule {
           provide: SkyAppConfigParams,
           useFactory() {
             const appConfigParams = new SkyAppConfigParams();
-            appConfigParams.init({
-              params: config.params
-            });
+            appConfigParams.init(config.params);
             return appConfigParams;
           }
         },
