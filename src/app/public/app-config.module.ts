@@ -12,6 +12,10 @@ import {
 } from './app-config-host';
 
 import {
+  SkyAppConfigParams
+} from './app-config-params';
+
+import {
   SkyAppParamsConfig
 } from './params-config';
 
@@ -31,6 +35,16 @@ export class SkyAppConfigModule {
             return new SkyAppParamsConfig({
               params: config.params
             });
+          }
+        },
+        {
+          provide: SkyAppConfigParams,
+          useFactory() {
+            const appConfigParams = new SkyAppConfigParams();
+            appConfigParams.init({
+              params: config.params
+            });
+            return appConfigParams;
           }
         },
         {

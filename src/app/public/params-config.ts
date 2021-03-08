@@ -26,7 +26,7 @@ const DEFAULTS = {
 };
 
 /**
- * @deprecated Use SkyAppConfigParams instead.
+ * @deprecated Use `SkyAppConfigParams` instead.
  */
 @Injectable({
   providedIn: 'root'
