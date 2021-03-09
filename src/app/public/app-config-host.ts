@@ -16,9 +16,7 @@ const DEFAULTS: SkyuxConfigHost = {
 /**
  * Provides host configuration to components and applications.
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SkyAppConfigHost {
 
   public get host(): SkyuxConfigHost {

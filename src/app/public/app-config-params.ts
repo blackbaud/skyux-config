@@ -20,9 +20,7 @@ const DEFAULTS = {
   }
 };
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SkyAppConfigParams {
 
   public get params(): SkyuxConfigParams {

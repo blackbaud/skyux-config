@@ -31,6 +31,8 @@ describe('SkyAppConfigModule', () => {
   it('should not add providers by default', () => {
     expect(() => TestBed.inject(SkyAppConfigHost))
       .toThrowError(/No provider for SkyAppConfigHost/);
+    expect(() => TestBed.inject(SkyAppConfigParams))
+      .toThrowError(/No provider for SkyAppConfigParams/);
   });
 
 });
@@ -53,21 +55,18 @@ describe('SkyAppConfigModule.forRoot()', () => {
       },
       url: 'https://host.nxt.blackbaud.com/'
     });
-  });
 
-  it('should setup providers with config from forRoot args', () => {
-    const hostConfig = TestBed.inject(SkyAppConfigHost);
-    expect(hostConfig.host).toEqual({
-      frameOptions: {
-        none: true
-      },
-      url: 'https://host.nxt.blackbaud.com/'
+    const paramsConfig = TestBed.inject(SkyAppConfigParams);
+    expect(paramsConfig.params).toEqual({
+      envid: { required: false },
+      leid: { required: false },
+      svcid: { required: false }
     });
   });
 
 });
 
-describe('SkyAppConfigModule.forRoot()', () => {
+describe('SkyAppConfigModule.forRoot(config)', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
