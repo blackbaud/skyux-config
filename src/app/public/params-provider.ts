@@ -1,19 +1,8 @@
-import {
-  Injectable,
-  Optional
-} from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 
-import {
-  SkyAppConfigParams
-} from './app-config-params';
-
-import {
-  SkyAppParamsConfig
-} from './params-config';
-
-import {
-  SkyAppRuntimeConfigParams
-} from './params';
+import { SkyAppConfigParams } from './app-config-params';
+import { SkyAppRuntimeConfigParams } from './params';
+import { SkyAppParamsConfig } from './params-config';
 
 /**
  * Provides methods to interact with runtime config query parameters.
@@ -22,7 +11,6 @@ import {
   providedIn: 'root'
 })
 export class SkyAppRuntimeConfigParamsProvider {
-
   public get params(): SkyAppRuntimeConfigParams {
     return this._params;
   }
@@ -38,5 +26,4 @@ export class SkyAppRuntimeConfigParamsProvider {
       configParams?.params || paramsConfig?.params || {}
     );
   }
-
 }

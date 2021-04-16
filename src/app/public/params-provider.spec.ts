@@ -1,17 +1,8 @@
-import {
-  SkyAppConfigParams
-} from './app-config-params';
-
-import {
-  SkyAppParamsConfig
-} from './params-config';
-
-import {
-  SkyAppRuntimeConfigParamsProvider
-} from './params-provider';
+import { SkyAppConfigParams } from './app-config-params';
+import { SkyAppParamsConfig } from './params-config';
+import { SkyAppRuntimeConfigParamsProvider } from './params-provider';
 
 describe('SkyAppRuntimeConfigParamsProvider', () => {
-
   it('should return runtime params', () => {
     const config = new SkyAppParamsConfig({
       params: {
@@ -43,5 +34,4 @@ describe('SkyAppRuntimeConfigParamsProvider', () => {
     const provider = new SkyAppRuntimeConfigParamsProvider();
     expect(provider.params.getAll()).toEqual({});
   });
-
 });

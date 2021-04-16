@@ -1,6 +1,4 @@
-import {
-  Component
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   SkyAppConfigHost,
@@ -12,7 +10,6 @@ import {
   template: `Home works!`
 })
 export class HomeComponent {
-
   constructor(
     hostConfig: SkyAppConfigHost,
     paramsProvider: SkyAppRuntimeConfigParamsProvider
@@ -20,5 +17,4 @@ export class HomeComponent {
     console.log('Runtime params:', paramsProvider.params.getAll(true));
     console.log('Host config:', hostConfig.host);
   }
-
 }

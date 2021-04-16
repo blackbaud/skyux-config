@@ -1,10 +1,9 @@
 import { SkyAppRuntimeConfigParams } from './params';
 
 describe('SkyAppRuntimeConfigParams', () => {
-
   const allowed = {
-    'a1': {},
-    'a3': {}
+    a1: {},
+    a3: {}
   };
 
   it('should parse allowed params from a url', () => {
@@ -37,24 +36,28 @@ describe('SkyAppRuntimeConfigParams', () => {
       '?a1=b',
       allowed
     );
-    expect(params.getUrl('https://mysite.com?c=d')).toEqual('https://mysite.com?c=d&a1=b');
+    expect(params.getUrl('https://mysite.com?c=d')).toEqual(
+      'https://mysite.com?c=d&a1=b'
+    );
   });
 
-  it('should exclude certain parameters from being added to a url\'s querystring', () => {
+  it("should exclude certain parameters from being added to a url's querystring", () => {
     const params: SkyAppRuntimeConfigParams = new SkyAppRuntimeConfigParams(
       '?a1=b&b2=c3&z4=y',
       {
-        'a1': true,
-        'b2': {
+        a1: true,
+        b2: {
           required: true
         },
-        'z4': {
+        z4: {
           excludeFromRequests: true
         }
       }
     );
 
-    expect(params.getUrl('https://mysite.com?c=d')).toEqual('https://mysite.com?c=d&a1=b&b2=c3');
+    expect(params.getUrl('https://mysite.com?c=d')).toEqual(
+      'https://mysite.com?c=d&a1=b&b2=c3'
+    );
   });
 
   it('should not add a current param if the url already has it', () => {
@@ -62,7 +65,9 @@ describe('SkyAppRuntimeConfigParams', () => {
       '?a1=b',
       allowed
     );
-    expect(params.getUrl('https://mysite.com?a1=c&a3=e')).toEqual('https://mysite.com?a1=c&a3=e');
+    expect(params.getUrl('https://mysite.com?a1=c&a3=e')).toEqual(
+      'https://mysite.com?a1=c&a3=e'
+    );
   });
 
   it('should add the current params to a url without a querystring', () => {
@@ -70,7 +75,9 @@ describe('SkyAppRuntimeConfigParams', () => {
       '?a1=b',
       allowed
     );
-    expect(params.getUrl('https://mysite.com')).toEqual('https://mysite.com?a1=b');
+    expect(params.getUrl('https://mysite.com')).toEqual(
+      'https://mysite.com?a1=b'
+    );
   });
 
   it('should return the current url if no params set (do not add ?)', () => {
@@ -86,7 +93,9 @@ describe('SkyAppRuntimeConfigParams', () => {
       '?a1=%2F',
       allowed
     );
-    expect(params.getUrl('https://mysite.com')).toEqual('https://mysite.com?a1=%2F');
+    expect(params.getUrl('https://mysite.com')).toEqual(
+      'https://mysite.com?a1=%2F'
+    );
   });
 
   it('should allow querystring param keys to be case insensitive', () => {
@@ -171,15 +180,12 @@ describe('SkyAppRuntimeConfigParams', () => {
   });
 
   it('should decode values when retrieved from the query string', () => {
-    const params = new SkyAppRuntimeConfigParams(
-      '?a=%2F',
-      {
-        a: true,
-        b: {
-          value: '%2F'
-        }
+    const params = new SkyAppRuntimeConfigParams('?a=%2F', {
+      a: true,
+      b: {
+        value: '%2F'
       }
-    );
+    });
 
     expect(params.get('a')).toBe('/');
     expect(params.get('b')).toBe('/');
@@ -248,7 +254,9 @@ describe('SkyAppRuntimeConfigParams', () => {
     );
     expect(params.get('a1')).toEqual('b');
     expect(params.get('a3')).toEqual('c');
-    expect(params.getUrl('example.com')).not.toContain('hash-better=have-my-money');
+    expect(params.getUrl('example.com')).not.toContain(
+      'hash-better=have-my-money'
+    );
   });
 
   it('should ignore params in a fragment', () => {
@@ -268,5 +276,4 @@ describe('SkyAppRuntimeConfigParams', () => {
 
     expect(params.getAllKeys()).toEqual([]);
   });
-
 });

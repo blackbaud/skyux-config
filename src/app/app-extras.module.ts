@@ -1,10 +1,6 @@
-import {
-  NgModule
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 
-import {
-  SkyAppConfigModule
-} from './public/public_api';
+import { SkyAppConfigModule } from './public/public_api';
 
 /**
  * Demonstrates how to provide params/host configuration from a consumer's application.
@@ -27,4 +23,4 @@ import {
     })
   ]
 })
-export class AppExtrasModule { }
+export class AppExtrasModule {}

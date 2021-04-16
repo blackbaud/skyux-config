@@ -1,10 +1,6 @@
-import {
-  Injectable
-} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {
-  SkyuxConfigParams
-} from './config-params';
+import { SkyuxConfigParams } from './config-params';
 
 const DEFAULTS = {
   params: {
@@ -22,20 +18,16 @@ const DEFAULTS = {
 
 @Injectable()
 export class SkyAppConfigParams {
-
   public get params(): SkyuxConfigParams {
     return this._params;
   }
 
   private _params: SkyuxConfigParams;
 
-  public init(
-    params?: SkyuxConfigParams
-  ): void {
+  public init(params?: SkyuxConfigParams): void {
     this._params = {
       ...DEFAULTS.params,
-      ...params || {}
+      ...(params || {})
     };
   }
-
 }

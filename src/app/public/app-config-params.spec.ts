@@ -1,9 +1,6 @@
-import {
-  SkyAppConfigParams
-} from './app-config-params';
+import { SkyAppConfigParams } from './app-config-params';
 
 describe('SkyAppConfigParams', () => {
-
   it('should return defaults', () => {
     const config = new SkyAppConfigParams();
     config.init();
@@ -42,5 +39,4 @@ describe('SkyAppConfigParams', () => {
       }
     });
   });
-
 });

@@ -1,49 +1,31 @@
-import {
-  TestBed
-} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import {
-  SkyAppConfigModule
-} from './app-config.module';
-
-import {
-  SkyAppConfigHost
-} from './app-config-host';
-
-import {
-  SkyAppConfigParams
-} from './app-config-params';
-
-import {
-  SkyAppParamsConfig
-} from './params-config';
+import { SkyAppConfigHost } from './app-config-host';
+import { SkyAppConfigParams } from './app-config-params';
+import { SkyAppConfigModule } from './app-config.module';
+import { SkyAppParamsConfig } from './params-config';
 
 describe('SkyAppConfigModule', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        SkyAppConfigModule
-      ]
+      imports: [SkyAppConfigModule]
     });
   });
 
   it('should not add providers by default', () => {
-    expect(() => TestBed.inject(SkyAppConfigHost))
-      .toThrowError(/No provider for SkyAppConfigHost/);
-    expect(() => TestBed.inject(SkyAppConfigParams))
-      .toThrowError(/No provider for SkyAppConfigParams/);
+    expect(() => TestBed.inject(SkyAppConfigHost)).toThrowError(
+      /No provider for SkyAppConfigHost/
+    );
+    expect(() => TestBed.inject(SkyAppConfigParams)).toThrowError(
+      /No provider for SkyAppConfigParams/
+    );
   });
-
 });
 
 describe('SkyAppConfigModule.forRoot()', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        SkyAppConfigModule.forRoot()
-      ]
+      imports: [SkyAppConfigModule.forRoot()]
     });
   });
 
@@ -63,11 +45,9 @@ describe('SkyAppConfigModule.forRoot()', () => {
       svcid: { required: false }
     });
   });
-
 });
 
 describe('SkyAppConfigModule.forRoot(config)', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -101,5 +81,4 @@ describe('SkyAppConfigModule.forRoot(config)', () => {
       value: 'bar'
     });
   });
-
 });

@@ -1,9 +1,6 @@
-import {
-  SkyAppConfigHost
-} from './app-config-host';
+import { SkyAppConfigHost } from './app-config-host';
 
 describe('SkyAppConfigHost', () => {
-
   it('should set defaults', () => {
     const hostConfig = new SkyAppConfigHost();
     hostConfig.init();
@@ -35,5 +32,4 @@ describe('SkyAppConfigHost', () => {
       }
     });
   });
-
 });

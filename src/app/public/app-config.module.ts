@@ -1,31 +1,15 @@
-import {
-  ModuleWithProviders,
-  NgModule
-} from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
-import {
-  SkyAppConfigModuleForRootArgs
-} from './app-config-module-for-root-args';
-
-import {
-  SkyAppConfigHost
-} from './app-config-host';
-
-import {
-  SkyAppConfigParams
-} from './app-config-params';
-
-import {
-  SkyAppParamsConfig
-} from './params-config';
+import { SkyAppConfigHost } from './app-config-host';
+import { SkyAppConfigModuleForRootArgs } from './app-config-module-for-root-args';
+import { SkyAppConfigParams } from './app-config-params';
+import { SkyAppParamsConfig } from './params-config';
 
 @NgModule({})
 export class SkyAppConfigModule {
-
   public static forRoot(
     config: SkyAppConfigModuleForRootArgs = {}
   ): ModuleWithProviders<SkyAppConfigModule> {
-
     return {
       ngModule: SkyAppConfigModule,
       providers: [
