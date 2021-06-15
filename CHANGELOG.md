@@ -1,6 +1,14 @@
 # 5.0.0-beta.0 (2021-06-15)
 
+### New features
+
 - Initial beta release.
+- Added support for `@angular/core@^12`. [#77](https://github.com/blackbaud/skyux-config/pull/77)
+- Deprecated `SkyAppConfigHost`, `SkyAppConfigParams`, `SkyAppConfigModule`, and `SkyAppRuntimeConfigParamsProvider`. [#77](https://github.com/blackbaud/skyux-config/pull/77)
+
+### Breaking changes
+
+- Removed `SkyAppParamsConfig`. Use `SkyAppConfig.skyux.params` instead. [#77](https://github.com/blackbaud/skyux-config/pull/77)
 
 # 4.4.0 (2021-03-15)
 
