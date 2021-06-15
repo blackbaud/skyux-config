@@ -1,6 +1,6 @@
 {
   "name": "@skyux/config",
-  "version": "4.4.0",
+  "version": "5.0.0-beta.0",
   "description": "SKY UX Config",
   "scripts": {
     "build": "skyux build-public-library && node ./scripts/prepare-package.js",
@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/blackbaud/skyux-config#readme",
   "peerDependencies": {
-    "@angular/common": "^9.1.4",
-    "@angular/core": "^9.1.4"
+    "@angular/common": "^9.1.4 || ^12",
+    "@angular/core": "^9.1.4 || ^12"
   },
   "dependencies": {},
   "devDependencies": {

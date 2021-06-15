@@ -1,3 +1,7 @@
+# 5.0.0-beta.0 (2021-06-15)
+
+- Initial beta release.
+
 # 4.4.0 (2021-03-15)
 
 - Added the `SkyAppConfigParams` injectable to replace (the now deprecated) `SkyAppParamsConfig`. This was done to address a naming convention inconsistency. [#74](https://github.com/blackbaud/skyux-config/pull/74)
