@@ -104,8 +104,8 @@ export interface SkyuxConfigHost {
 }
 
 export interface SkyuxConfigAnyAllSet {
-  any?: string[],
-  all?: string[]
+  any?: string[];
+  all?: string[];
 }
 
 export interface SkyuxConfig {
