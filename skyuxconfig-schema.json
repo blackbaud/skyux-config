@@ -2,6 +2,23 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "JSON schema for SKY UX CLI skyuxconfig.json",
   "definitions": {
+    "anyAllSet": {
+      "type": "object",
+      "properties": {
+        "any": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "all": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "externalFileCSS": {
       "type": "object",
       "properties": {
@@ -354,11 +371,79 @@
       "properties": {
         "public": {
           "description": "Public routes.",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "description": "A friendly name to reference the route. This is not necessarily the display value for the navigation link, as that is configured in the information architecture repo, but this name is provided to the information architect to understand the purpose and usage of the page.",
+                "type": "string"
+              },
+              "description": {
+                "description": "A helpful description to explain the purpose of the route. This is provided to the information architect to understand the purpose and usage of the page.",
+                "type": "string"
+              },
+              "global": {
+                "description": "A boolean indicating whether the route should be available for global navigation in the omnibar.",
+                "type": "boolean"
+              },
+              "route": {
+                "description": "This is the relative path to the route (page) in your SPA. It should not include the top-level SPA-name folder that you get when hosting the SPA.",
+                "type": "string"
+              },
+              "claims": {
+                "description": "(Optional) An object with 'any' or 'all' containing an array of claims. If provided, then the organization must have the claims in the current environment for the link to show up.",
+                "$ref": "#/definitions/anyAllSet"
+              },
+              "entitlementType": {
+                "description": "(Optional) An entitlement type from the Entitlements Service. If provided, then the organization must have this entitlement in the current environment for the link to show up.",
+                "type": "string"
+              },
+              "entitlements": {
+                "description": "(Optional) An object with 'any' or 'all' containing an array of entitlements from the Entitlements Service. If provided, then the organization must have the entitlements in the current environment for the link to show up.",
+                "$ref": "#/definitions/anyAllSet"
+              },
+              "permissionId": {
+                "description": "(Optional) A permission id from the Entitlements Service. If provided, then the user must have this permission in the current environment for the link to show up.",
+                "type": "string"
+              },
+              "permissions": {
+                "description": "(Optional) Object that contains permission information as it applies to the route.",
+                "type": "object",
+                "properties": {
+                  "admin": {
+                    "description": "(Optional) A boolean indicating that the route requires admin access. If provided, then the user must be configured as an administrator in the current environment for the link to show up.",
+                    "type": "boolean"
+                  },
+                  "legalEntityAdmin": {
+                    "description": "(Optional) A boolean indicating that the route requires organization / legal entity admin access. If provided, then the user must be configured as an administrator in the current organization / legal entity for the link to show up.",
+                    "type": "boolean"
+                  },
+                  "permissionIds": {
+                    "description": "(Optional) An object with 'any' or 'all' containing an array of permission ids from the Entitlements Service. If provided, then the user must have the permissions in the current environment for the link to show up.",
+                    "$ref": "#/definitions/anyAllSet"
+                  }
+                }
+              }
+            }
+          }
         },
         "referenced": {
           "description": "Referenced routes.",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "app": {
+                "description": "The name of the app with the route defined in its `skyuxconfig.json` file.",
+                "type": "string"
+              },
+              "route": {
+                "description": "The route as it is defined in the app's `skyuxconfig.json` file.",
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },
