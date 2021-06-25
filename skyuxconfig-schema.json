@@ -392,7 +392,7 @@
                 "type": "string"
               },
               "claims": {
-                "description": "(Optional) An object with 'any' or 'all' containing an array of claims. If provided, then the organization must have the claims in the current environment for the link to show up.",
+                "description": "(Optional) An object with 'any' or 'all' containing an array of claims. If provided, then the user must have the claims in the current environment for the link to show up.",
                 "$ref": "#/definitions/anyAllSet"
               },
               "entitlementType": {
