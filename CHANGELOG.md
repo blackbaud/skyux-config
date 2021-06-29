@@ -1,3 +1,7 @@
+# 5.0.0-beta.1 (2021-06-29)
+
+- Updated `skyuxconfig.json` schema to be more specific and match documentation. [#78](https://github.com/blackbaud/skyux-config/pull/78)
+
 # 5.0.0-beta.0 (2021-06-15)
 
 ### New features
