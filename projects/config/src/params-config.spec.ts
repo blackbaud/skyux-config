@@ -19,4 +19,28 @@ describe('SkyAppParamsConfig', () => {
     });
   });
 
+  it('should allow params overrides', () => {
+    const config = new SkyAppParamsConfig({
+      params: {
+        foo: {
+          value: 'bar'
+        }
+      }
+    });
+    expect(config.params).toEqual({
+      envid: {
+        required: false
+      },
+      foo: {
+        value: 'bar'
+      },
+      leid: {
+        required: false
+      },
+      svcid: {
+        required: false
+      }
+    });
+  });
+
 });
