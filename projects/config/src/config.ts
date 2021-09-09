@@ -103,6 +103,11 @@ export interface SkyuxConfigHost {
   url?: string;
 }
 
+export interface SkyuxConfigAnyAllSet {
+  any?: string[];
+  all?: string[];
+}
+
 export interface SkyuxConfig {
   $schema?: string;
   a11y?: SkyuxConfigA11y | boolean;
@@ -126,10 +131,27 @@ export interface SkyuxConfig {
   params?: SkyuxConfigParams; // List of allowed params
   pipelineSettings?: any;
   plugins?: string[];
-  redirects?: any;
+  redirects?: {[from: string]: string};
   routes?: {
-    public?: any[],
-    referenced?: any[]
+    public?: {
+      title?: string
+      description?: string
+      global?: boolean,
+      route: string,
+      claims?: SkyuxConfigAnyAllSet,
+      entitlementType?: string,
+      entitlements?: SkyuxConfigAnyAllSet,
+      permissionId?: string,
+      permissions?: {
+        admin?: boolean,
+        legalEntityAdmin?: boolean,
+        permissionIds?: SkyuxConfigAnyAllSet
+      }
+    }[],
+    referenced?: {
+      app: string,
+      route: string
+    }[]
   };
   testSettings?: SkyuxConfigTestSettings;
   omnibar?: any;

@@ -20,6 +20,9 @@ const DEFAULTS = {
   }
 };
 
+/**
+ * @deprecated Use `SkyAppConfig.skyux.params` instead.
+ */
 @Injectable()
 export class SkyAppConfigParams {
 
