@@ -1,3 +1,7 @@
+# 5.0.0-beta.2 (2021-09-10)
+
+- Migrated to Angular CLI. [#82](https://github.com/blackbaud/skyux-config/pull/82)
+
 # 5.0.0-beta.1 (2021-06-29)
 
 - Updated `skyuxconfig.json` schema to be more specific and match documentation. [#78](https://github.com/blackbaud/skyux-config/pull/78)
