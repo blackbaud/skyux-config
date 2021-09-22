@@ -1,3 +1,7 @@
+# 5.0.0-beta.3 (2021-09-22)
+
+- Added the `blackbaudEmployee` property to the `auth` configuration. [#84](https://github.com/blackbaud/skyux-config/pull/84)
+
 # 5.0.0-beta.2 (2021-09-10)
 
 - Migrated to Angular CLI. [#82](https://github.com/blackbaud/skyux-config/pull/82)
