@@ -166,7 +166,13 @@
     },
     "auth": {
       "description": "Indicates whether the application requires an authenticated Blackbaud ID",
-      "type": "boolean"
+      "type": ["boolean", "object"],
+      "properties": {
+        "blackbaudEmployee": {
+          "description": "Indicates whether the application is accessible only to Blackbaud employees",
+          "type": "boolean"
+        }
+      }
     },
     "codeCoverageThreshold": {
       "description": "Specifies the minimum required code coverage threshold.",
