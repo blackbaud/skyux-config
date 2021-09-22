@@ -76,6 +76,10 @@ export interface SkyuxConfigApp {
   title?: string;
 }
 
+export interface SkyuxConfigAuth {
+  blackbaudEmployee?: boolean;
+}
+
 export interface SkyuxConfigHostBBCheckout {
   version: '2';
 }
@@ -113,7 +117,7 @@ export interface SkyuxConfig {
   a11y?: SkyuxConfigA11y | boolean;
   app?: SkyuxConfigApp;
   appSettings?: any;
-  auth?: boolean;
+  auth?: SkyuxConfigAuth | boolean;
   codeCoverageThreshold?: 'none' | 'standard' | 'strict';
   command?: string;
   compileMode?: string;
