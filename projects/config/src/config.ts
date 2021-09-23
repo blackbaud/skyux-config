@@ -76,7 +76,7 @@ export interface SkyuxConfigApp {
   title?: string;
 }
 
-export interface SkyuxConfigAuth {
+export interface SkyuxConfigAuthSettings {
   blackbaudEmployee?: boolean;
 }
 
@@ -117,7 +117,8 @@ export interface SkyuxConfig {
   a11y?: SkyuxConfigA11y | boolean;
   app?: SkyuxConfigApp;
   appSettings?: any;
-  auth?: SkyuxConfigAuth | boolean;
+  auth?: boolean;
+  authSettings?: SkyuxConfigAuthSettings;
   codeCoverageThreshold?: 'none' | 'standard' | 'strict';
   command?: string;
   compileMode?: string;

@@ -166,7 +166,11 @@
     },
     "auth": {
       "description": "Indicates whether the application requires an authenticated Blackbaud ID",
-      "type": ["boolean", "object"],
+      "type": "boolean"
+    },
+    "authSettings": {
+      "description": "Additional options when enabling Blackbaud ID authentication",
+      "type": "object",
       "properties": {
         "blackbaudEmployee": {
           "description": "Indicates whether the application is accessible only to Blackbaud employees",
