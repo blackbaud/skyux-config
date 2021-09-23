@@ -168,8 +168,8 @@
       "description": "Indicates whether the application requires an authenticated Blackbaud ID",
       "type": "boolean"
     },
-    "authOptions": {
-      "description": "Indicates whether the application requires an authenticated Blackbaud ID",
+    "authSettings": {
+      "description": "Additional options when enabling Blackbaud ID authentication",
       "type": "object",
       "properties": {
         "blackbaudEmployee": {

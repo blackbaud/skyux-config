@@ -1,3 +1,7 @@
+# 5.0.0-beta.4 (2021-09-23)
+
+- Moved the `blackbaudEmployee` property to a new `authSettings` configuration. [#85](https://github.com/blackbaud/skyux-config/pull/85)
+
 # 5.0.0-beta.3 (2021-09-22)
 
 - Added the `blackbaudEmployee` property to the `auth` configuration. [#84](https://github.com/blackbaud/skyux-config/pull/84)
