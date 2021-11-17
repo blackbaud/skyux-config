@@ -33,7 +33,7 @@
       }
     },
     "externalFileJS": {
-      "allOf":[
+      "allOf": [
         {
           "$ref": "#/definitions/externalFileCSS"
         },
@@ -49,19 +49,13 @@
     },
     "availableThemes": {
       "type": "string",
-      "enum": [
-        "default",
-        "modern"
-      ]
+      "enum": ["default", "modern"]
     }
   },
   "properties": {
     "a11y": {
       "description": "Enables or disables accessibility test rules. You can manage rules individually, or you can enable or disable all rules in bulk.",
-      "type": [
-        "object",
-        "boolean"
-      ],
+      "type": ["object", "boolean"],
       "properties": {
         "rules": {
           "type": "array",
@@ -181,19 +175,12 @@
     "codeCoverageThreshold": {
       "description": "Specifies the minimum required code coverage threshold.",
       "type": "string",
-      "enum": [
-        "none",
-        "standard",
-        "strict"
-      ]
+      "enum": ["none", "standard", "strict"]
     },
     "compileMode": {
       "description": "Specifies how to compile the project's code.",
       "type": "string",
-      "enum": [
-        "aot",
-        "jit"
-      ],
+      "enum": ["aot", "jit"],
       "default": "aot"
     },
     "cssPath": {
@@ -206,9 +193,7 @@
     },
     "help": {
       "description": " Indicates whether to automatically include the help widget in the application to identify the current page and display relevant help content. This property is for internal Blackbaud use only.",
-      "type": [
-        "object"
-      ]
+      "type": ["object"]
     },
     "host": {
       "description": "Blackbaud Only - Specifies configuration options for communication with SKY UX Host.",
@@ -221,9 +206,7 @@
             "version": {
               "description": "Specifies the whitelisted version of bbCheckout to include.",
               "type": "string",
-              "enum": [
-                "2"
-              ]
+              "enum": ["2"]
             }
           }
         },
@@ -254,9 +237,7 @@
                 "const": true
               }
             },
-            "required": [
-              "none"
-            ]
+            "required": ["none"]
           },
           "then": {
             "not": {
@@ -267,9 +248,7 @@
                       "const": true
                     }
                   },
-                  "required": [
-                    "blackbaud"
-                  ]
+                  "required": ["blackbaud"]
                 },
                 {
                   "properties": {
@@ -277,9 +256,7 @@
                       "const": true
                     }
                   },
-                  "required": [
-                    "self"
-                  ]
+                  "required": ["self"]
                 },
                 {
                   "properties": {
@@ -287,9 +264,7 @@
                       "minItems": 1
                     }
                   },
-                  "required": [
-                    "urls"
-                  ]
+                  "required": ["urls"]
                 }
               ]
             }
@@ -313,10 +288,7 @@
     "mode": {
       "description": "Controls how much boilerplate code to generate automatically.",
       "type": "string",
-      "enum": [
-        "easy",
-        "advanced"
-      ],
+      "enum": ["easy", "advanced"],
       "default": "easy"
     },
     "moduleAliases": {
@@ -337,15 +309,10 @@
     },
     "params": {
       "description": "Specifies a list of parameters that are allowed at runtime.",
-      "type": [
-        "object"
-      ],
+      "type": ["object"],
       "patternProperties": {
         "^.*$": {
-          "type": [
-            "boolean",
-            "object"
-          ],
+          "type": ["boolean", "object"],
           "properties": {
             "required": {
               "description": "Indicates the parameter must be supplied to the application in order to function.",
@@ -489,9 +456,7 @@
             "browserSet": {
               "description": "The named set of browsers to run against.",
               "type": "string",
-              "enum": [
-                "speedy"
-              ]
+              "enum": ["speedy"]
             }
           }
         },
@@ -502,11 +467,7 @@
             "browserSet": {
               "description": "The named set of browsers to run against.",
               "type": "string",
-              "enum": [
-                "speedy",
-                "quirky",
-                "paranoid"
-              ]
+              "enum": ["speedy", "quirky", "paranoid"]
             }
           }
         }
